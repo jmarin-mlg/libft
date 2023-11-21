@@ -6,7 +6,7 @@
 /*   By: jmarin-o <jmarin-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 08:44:35 by jmarin-o          #+#    #+#             */
-/*   Updated: 2023/04/24 18:50:20 by jmarin-o         ###   ########.fr       */
+/*   Updated: 2023/11/21 07:18:32 by jmarin-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,5 @@
 */
 int	ft_isalnum(int c)
 {
-	if (ft_isalpha(c) || ft_isdigit(c))
-		return (1);
-	return (0);
+	return (ft_isalpha(c) || ft_isdigit(c));
 }

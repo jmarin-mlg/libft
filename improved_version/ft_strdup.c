@@ -6,7 +6,7 @@
 /*   By: jmarin-o <jmarin-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 07:15:02 by jmarin-o          #+#    #+#             */
-/*   Updated: 2023/05/01 08:36:50 by jmarin-o         ###   ########.fr       */
+/*   Updated: 2023/11/21 07:29:21 by jmarin-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ char	*ft_strdup(const char *s1)
 
 	size = ft_strlen(s1) + 1;
 	res = malloc(size);
-	if (res == NULL)
-		return (res);
+	if (!res)
+		return (NULL);
 	ft_strlcpy(res, s1, size);
 	return (res);
 }
