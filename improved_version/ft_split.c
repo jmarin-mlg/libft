@@ -6,7 +6,7 @@
 /*   By: jmarin-o <jmarin-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 10:34:51 by jmarin-o          #+#    #+#             */
-/*   Updated: 2023/05/04 18:55:05 by jmarin-o         ###   ########.fr       */
+/*   Updated: 2023/11/21 07:10:00 by jmarin-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ static void	ft_free_memory(char **split, int index)
 	while (index-- > 0)
 		free(split[index]);
 	free(split);
+	split = NULL;
 	return ;
 }
 
