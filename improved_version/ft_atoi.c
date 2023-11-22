@@ -15,33 +15,25 @@
 /*
 ** The function converts the initial portion of the string pointed to by str to
 ** int representation.
-** ASCII 9 - 13 and 32 => Spaces
-** ASCII 43 and 45     => Signs + and -
-** ASCII 48 - 57       => Numbers 0 - 9
+** ASCII 9 - 13 and 32 => Spaces ('\t', '\n', '\v', '\f', '\r', ' ')
 */
 int	ft_atoi(const char *str)
 {
 	int	sign;
-	int	sign_count;
 	int	result;
 	int	i;
 
+	if (!str)
+		return (0);
 	sign = 1;
-	sign_count = 0;
 	result = 0;
 	i = 0;
-	while (str[i] && ((str[i] >= 9 && str[i] <= 13) || str[i] == 32))
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
 		++i;
-	while (str[i] && (str[i] == 43 || str[i] == 45))
-	{
-		if (str[i] == 45)
-			sign *= -1;
-		++i;
-		++sign_count;
-		if (sign_count >= 2)
-			return (0);
-	}
-	while (str[i] && (str[i] >= 48 && str[i] <= 57))
-		result = (result * 10) + (str[i++] - 48);
+	if (str[i] == '+' || str[i] == '-')
+		if (str[i++] == '-')
+			sign = -1;
+	while (str[i] >= '0' && str[i] <= '9')
+		result = (result * 10) + (str[i++] - '0');
 	return (result * sign);
 }
