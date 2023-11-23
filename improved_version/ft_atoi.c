@@ -6,7 +6,7 @@
 /*   By: jmarin-o <jmarin-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 07:38:17 by jmarin-o          #+#    #+#             */
-/*   Updated: 2023/05/01 08:29:25 by jmarin-o         ###   ########.fr       */
+/*   Updated: 2023/11/23 05:52:51 by jmarin-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ int	ft_atoi(const char *str)
 	int	result;
 	int	i;
 
-	if (!str)
-		return (0);
 	sign = 1;
 	result = 0;
 	i = 0;
