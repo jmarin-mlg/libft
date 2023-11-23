@@ -6,7 +6,7 @@
 /*   By: jmarin-o <jmarin-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 17:59:35 by jmarin-o          #+#    #+#             */
-/*   Updated: 2023/05/01 08:34:09 by jmarin-o         ###   ########.fr       */
+/*   Updated: 2023/11/23 07:28:33 by jmarin-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		return (NULL);
 	if (dst > src)
 		while (len-- > 0)
-			*((char *) dst + (len + 1) - 1) = *((char *) src + (len + 1) - 1);
+			*((char *) dst + len) = *((char *) src + len);
 	else
 		return (ft_memcpy(dst, src, len));
 	return (dst);

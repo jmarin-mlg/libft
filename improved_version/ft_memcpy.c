@@ -6,7 +6,7 @@
 /*   By: jmarin-o <jmarin-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 17:23:23 by jmarin-o          #+#    #+#             */
-/*   Updated: 2023/05/01 08:33:22 by jmarin-o         ###   ########.fr       */
+/*   Updated: 2023/11/23 07:24:50 by jmarin-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 	if (n == 0 || dst == src)
 		return (dst);
-	i = 0;
-	while (i < n)
-	{
+	i = -1;
+	while (++i < n)
 		*((char *) dst + i) = *((char *) src + i);
-		++i;
-	}
 	return (dst);
 }

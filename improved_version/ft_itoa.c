@@ -6,43 +6,66 @@
 /*   By: jmarin-o <jmarin-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 16:26:12 by jmarin-o          #+#    #+#             */
-/*   Updated: 2023/05/04 18:07:55 by jmarin-o         ###   ########.fr       */
+/*   Updated: 2023/11/23 07:11:46 by jmarin-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** n: The integer to convert.
+** ft_numlen: Calculate the length of the integer representation, considering
+** both positive and negative numbers.
 **
-** Returns the string representing the number, or NULL if memory allocation
-** fails.
+** Parameters:
+**   num: The integer for which the length is calculated.
+**
+** Returns:
+**   The length of the integer representation.
 */
-static int	ft_numlen(int n)
+static int	ft_numlen(int num)
 {
 	int	len;
 
 	len = 0;
-	if (n <= 0)
+	if (num <= 0)
 		len = 1;
-	while (n != 0)
+	while (num != 0)
 	{
 		++len;
-		n /= 10;
+		num /= 10;
 	}
 	return (len);
 }
 
-static char	*ft_numstr(char *s, unsigned int n, size_t len)
+/*
+** ft_numstr: Convert an unsigned integer to a string and store it in the
+** provided character array starting from the given index.
+**
+** Parameters:
+**   str: The character array to store the string representation.
+**   num: The unsigned integer to convert.
+**   len: The starting index in the character array to store the string.
+**
+** Returns:
+**   The updated character array with the string representation.
+*/
+static char	*ft_numstr(char *str, unsigned int num, size_t len)
 {
-	while (n > 0)
+	while (num > 0)
 	{
-		s[len--] = (n % 10) + '0';
-		n /= 10;
+		str[len--] = (num % 10) + '0';
+		num /= 10;
 	}
-	return (s);
+	return (str);
 }
 
+/*
+** Parameters:
+**   n: The integer to convert.
+**
+** Returns the string representing the number, or NULL if memory allocation
+** fails.
+*/
 char	*ft_itoa(int n)
 {
 	char	*res;
@@ -60,6 +83,5 @@ char	*ft_itoa(int n)
 		n *= -1;
 		res[0] = '-';
 	}
-	res = ft_numstr(res, n, len);
-	return (res);
+	return (ft_numstr(res, n, len));
 }
