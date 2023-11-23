@@ -13,7 +13,7 @@
 #include "libft.h"
 
 /*
-** ft_numlen: Calculate the length of the integer representation, considering
+** numlen: Calculate the length of the integer representation, considering
 ** both positive and negative numbers.
 **
 ** Parameters:
@@ -22,7 +22,7 @@
 ** Returns:
 **   The length of the integer representation.
 */
-static int	ft_numlen(int num)
+static int	numlen(int num)
 {
 	int	len;
 
@@ -38,7 +38,7 @@ static int	ft_numlen(int num)
 }
 
 /*
-** ft_numstr: Convert an unsigned integer to a string and store it in the
+** numstr: Convert an unsigned integer to a string and store it in the
 ** provided character array starting from the given index.
 **
 ** Parameters:
@@ -49,7 +49,7 @@ static int	ft_numlen(int num)
 ** Returns:
 **   The updated character array with the string representation.
 */
-static char	*ft_numstr(char *str, unsigned int num, size_t len)
+static char	*numstr(char *str, unsigned int num, size_t len)
 {
 	while (num > 0)
 	{
@@ -71,7 +71,7 @@ char	*ft_itoa(int n)
 	char	*res;
 	int		len;
 
-	len = ft_numlen(n);
+	len = numlen(n);
 	res = (char *) ft_calloc(len + 1, sizeof(char));
 	if (!(res))
 		return (NULL);
@@ -83,5 +83,5 @@ char	*ft_itoa(int n)
 		n *= -1;
 		res[0] = '-';
 	}
-	return (ft_numstr(res, n, len));
+	return (numstr(res, n, len));
 }

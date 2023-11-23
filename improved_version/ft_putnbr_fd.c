@@ -6,7 +6,7 @@
 /*   By: jmarin-o <jmarin-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 20:17:59 by jmarin-o          #+#    #+#             */
-/*   Updated: 2023/04/30 06:22:24 by jmarin-o         ###   ########.fr       */
+/*   Updated: 2023/11/23 07:29:43 by jmarin-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,26 @@
 */
 void	ft_putnbr_fd(int n, int fd)
 {
+	int	divisor;
+
 	if (n == -2147483648)
+	{
 		ft_putstr_fd("-2147483648", fd);
-	else if (n < 0)
+		return ;
+	}
+	if (n < 0)
 	{
 		ft_putchar_fd('-', fd);
-		ft_putnbr_fd(-n, fd);
+		n = -n;
 	}
-	else
+	divisor = 1;
+	while (n / divisor > 9)
+		divisor *= 10;
+	while (divisor > 0)
 	{
-		if (n > 9)
-			ft_putnbr_fd(n / 10, fd);
-		ft_putchar_fd((n % 10) + '0', fd);
+		ft_putchar_fd((n / divisor) + '0', fd);
+		n %= divisor;
+		divisor /= 10;
 	}
 	return ;
 }

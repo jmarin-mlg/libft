@@ -13,34 +13,49 @@
 #include "libft.h"
 
 /*
-** s: The string to separate.
-** c: Delimiting character.
+** count_words: Count the number of words in a string delimited by a specified
+** character.
 **
-** Returns the array of new strings resulting from the split or NULL if memory
-** allocation fails.
+** Parameters:
+**   s: The input string.
+**   c: Delimiting character.
+**
+** Returns:
+**   The number of words in the string.
 */
-static int	ft_count_words(const char *s, char c)
+static int	count_words(const char *s, char c)
 {
 	int	n_words;
-	int	found;
 
 	n_words = 0;
-	found = 0;
 	while (*s)
 	{
-		if (*s != c && found == 0)
+		while (*s == c)
+			++s;
+		if (*s)
 		{
-			found = 1;
 			++n_words;
+			while (*s && *s != c)
+				++s;
 		}
-		else if (*s == c)
-			found = 0;
-		++s;
 	}
 	return (n_words);
 }
 
-static char	*ft_save_word(const char *s, int start, int end)
+/*
+** save_word: Extract and save a word from a string into a newly allocated
+** string.
+**
+** Parameters:
+**   s: The input string.
+**   start: The starting index of the word.
+**   end: The ending index of the word.
+**
+** Returns:
+**   A pointer to the newly allocated string containing the word, or NULL if
+**   memory allocation fails.
+*/
+static char	*save_word(const char *s, int start, int end)
 {
 	char	*res;
 	int		i;
@@ -55,39 +70,56 @@ static char	*ft_save_word(const char *s, int start, int end)
 	return (res);
 }
 
-static void	ft_free_memory(char **split, int index)
+/*
+** free_memory: Free the memory allocated for an array of strings and set the
+** array pointer to NULL.
+**
+** Parameters:
+**   split: The array of strings to be freed.
+**   index: The last index of the array to be freed.
+**
+** Returns:
+**   Always returns NULL (useful for concise error handling).
+*/
+static void	*free_memory(char **split, int index)
 {
 	while (index-- > 0)
 		free(split[index]);
 	free(split);
 	split = NULL;
-	return ;
+	return (NULL);
 }
 
+/*
+** s: The string to separate.
+** c: Delimiting character.
+**
+** Returns the array of new strings resulting from the split or NULL if memory
+** allocation fails.
+*/
 char	**ft_split(char const *s, char c)
 {
 	t_split	t;
 
+	t.split = (char **) ft_calloc((count_words(s, c) + 1), sizeof(char *));
+	if (!s || !t.split)
+		return (NULL);
 	t.len = ft_strlen(s);
 	t.i_st = 0;
 	t.i_sp = 0;
-	t.i_wo = -42;
-	t.split = (char **) ft_calloc((ft_count_words(s, c) + 1), sizeof(char *));
-	if (!t.split)
-		return (NULL);
-	while (t.i_st++ <= t.len)
+	t.i_wo = -1;
+	while (s[t.i_st])
 	{
-		if (s[t.i_st - 1] != c && t.i_wo == -42)
-			t.i_wo = t.i_st - 1;
-		else if ((s[t.i_st - 1] == c || (t.i_st - 1) == t.len) && t.i_wo != -42)
+		while (s[t.i_st] == c)
+			t.i_st++;
+		if (s[t.i_st])
 		{
-			t.split[t.i_sp++] = ft_save_word(s, t.i_wo, t.i_st - 1);
+			t.i_wo = t.i_st;
+			while (s[t.i_st] && s[t.i_st] != c)
+				t.i_st++;
+			t.split[t.i_sp++] = save_word(s, t.i_wo, t.i_st);
 			if (!t.split[t.i_sp - 1])
-			{
-				ft_free_memory(t.split, t.i_sp - 1);
-				return (NULL);
-			}
-			t.i_wo = -42;
+				return (free_memory(t.split, t.i_sp - 1));
 		}
 	}
 	return (t.split);
