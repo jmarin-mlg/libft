@@ -6,7 +6,7 @@
 /*   By: jmarin-o <jmarin-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 16:36:35 by jmarin-o          #+#    #+#             */
-/*   Updated: 2023/05/04 17:54:36 by jmarin-o         ###   ########.fr       */
+/*   Updated: 2023/11/27 06:50:09 by jmarin-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,5 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 		ft_lstdelone(*lst, del);
 		*lst = aux;
 	}
-	*lst = NULL;
 	return ;
 }

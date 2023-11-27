@@ -6,7 +6,7 @@
 /*   By: jmarin-o <jmarin-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 05:13:31 by jmarin-o          #+#    #+#             */
-/*   Updated: 2023/10/26 06:06:52 by jmarin-o         ###   ########.fr       */
+/*   Updated: 2023/11/27 06:01:06 by jmarin-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@
 ** part of the string; therefore if c is `\0', the functions locate the
 ** terminating `\0'.
 **
-** The ft_strrchr() function is identical to ft_strchr(), except it locates the
-** last occurrence of c.
-**
-** The functions ft_strchr() and ft_strrchr() return a pointer to the located
+** The functions ft_strchr() return a pointer to the located
 ** character, or NULL if the character does not appear in the string.
 */
 char	*ft_strchr(const char *s, int c)

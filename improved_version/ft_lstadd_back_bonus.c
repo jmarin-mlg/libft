@@ -6,7 +6,7 @@
 /*   By: jmarin-o <jmarin-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 13:00:27 by jmarin-o          #+#    #+#             */
-/*   Updated: 2023/11/15 06:42:00 by jmarin-o         ###   ########.fr       */
+/*   Updated: 2023/11/27 06:48:01 by jmarin-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,11 @@
 */
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*aux;
-
 	if (!new)
 		return ;
-	aux = ft_lstlast(*(lst));
-	if (!aux)
+	if (!*lst)
 		*lst = new;
 	else
-		aux->next = new;
+		ft_lstlast(*lst)->next = new;
 	return ;
 }

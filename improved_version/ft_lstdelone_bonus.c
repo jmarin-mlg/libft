@@ -6,7 +6,7 @@
 /*   By: jmarin-o <jmarin-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 16:19:50 by jmarin-o          #+#    #+#             */
-/*   Updated: 2023/11/21 07:12:21 by jmarin-o         ###   ########.fr       */
+/*   Updated: 2023/11/27 06:53:05 by jmarin-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,11 @@
 */
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	if (!lst || !del)
-		return ;
-	del(lst->content);
-	free(lst);
-	lst = NULL;
+	if (lst && del)
+	{
+		del(lst->content);
+		free(lst);
+		lst = NULL;
+	}
 	return ;
 }

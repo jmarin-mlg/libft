@@ -6,7 +6,7 @@
 /*   By: jmarin-o <jmarin-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 13:16:18 by jmarin-o          #+#    #+#             */
-/*   Updated: 2023/05/04 19:18:00 by jmarin-o         ###   ########.fr       */
+/*   Updated: 2023/11/27 06:57:29 by jmarin-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,12 @@
 */
 int	ft_lstsize(t_list *lst)
 {
-	int		i;
-	t_list	*aux;
+	int	i;
 
-	aux = lst;
 	i = 0;
-	while (aux)
+	while (lst)
 	{
-		aux = aux->next;
+		lst = lst->next;
 		++i;
 	}
 	return (i);

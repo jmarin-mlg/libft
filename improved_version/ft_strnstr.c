@@ -6,7 +6,7 @@
 /*   By: jmarin-o <jmarin-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 07:05:56 by jmarin-o          #+#    #+#             */
-/*   Updated: 2023/05/01 08:41:32 by jmarin-o         ###   ########.fr       */
+/*   Updated: 2023/11/27 05:58:11 by jmarin-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,5 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 			return ((char *) haystack + ih);
 		++ih;
 	}
-	return (0);
+	return (NULL);
 }
