@@ -13,8 +13,9 @@
 #include "libft.h"
 
 /*
-** lst: A pointer to the first node.
-** f: A pointer to the function to be used by each node.
+** Parameters:
+**   lst: A pointer to the first node.
+**   f: A pointer to the function to be used by each node.
 */
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {

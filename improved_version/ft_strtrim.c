@@ -13,8 +13,9 @@
 #include "libft.h"
 
 /*
-** s1: The string that should be trimmed.
-** set: The characters to remove from the string.
+** Parameters:
+**   s1: The string that should be trimmed.
+**   set: The characters to remove from the string.
 **
 ** Returns the trimmed string or NULL if memory allocation fails.
 */

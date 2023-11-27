@@ -13,8 +13,9 @@
 #include "libft.h"
 
 /*
-** c: The character to send.
-** fd: The file descriptor to write to.
+** Parameters:
+**   c: The character to send.
+**   fd: The file descriptor to write to.
 */
 void	ft_putchar_fd(char c, int fd)
 {

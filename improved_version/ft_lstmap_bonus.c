@@ -13,10 +13,11 @@
 #include "libft.h"
 
 /*
-** lst: A pointer to a node.
-** f: The address of a pointer to a used function in iterating through each item
-** in the list.
-** del: A function pointer used to remove the content of a node, if necessary.
+** Parameters:
+**   lst: A pointer to a node.
+**   f: The address of a pointer to a used function in iterating through each
+**   item in the list.
+**   del: A function pointer used to remove the content of a node, if necessary.
 **
 ** Returns the new list or NULL if memory allocation fails.
 */

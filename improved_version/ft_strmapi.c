@@ -13,8 +13,9 @@
 #include "libft.h"
 
 /*
-** s: The string to iterate.
-** f: The function to apply on each character.
+** Parameters:
+**   s: The string to iterate.
+**   f: The function to apply on each character.
 **
 ** Returns the string created after the correct use of ’f’ on each character or
 ** NULL if memory reservation fails.

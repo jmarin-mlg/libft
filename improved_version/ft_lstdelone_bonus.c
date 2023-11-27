@@ -13,8 +13,9 @@
 #include "libft.h"
 
 /*
-** lst: The node to release.
-** del: A pointer to the function used to free the content of the node.
+** Parameters:
+**   lst: The node to release.
+**   del: A pointer to the function used to free the content of the node.
 */
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {

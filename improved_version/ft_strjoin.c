@@ -13,8 +13,9 @@
 #include "libft.h"
 
 /*
-** s1: The first string.
-** s2: The string to add to ’s1’.
+** Parameters:
+**   s1: The first string.
+**   s2: The string to add to ’s1’.
 **
 ** Returns the new string or NULL if memory allocation fails.
 */

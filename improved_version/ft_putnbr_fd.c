@@ -13,8 +13,9 @@
 #include "libft.h"
 
 /*
-** n: The number to send.
-** fd: The file descriptor to write to.
+** Parameters:
+**   n: The number to send.
+**   fd: The file descriptor to write to.
 */
 void	ft_putnbr_fd(int n, int fd)
 {

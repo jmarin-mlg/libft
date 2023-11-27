@@ -13,7 +13,8 @@
 #include "libft.h"
 
 /*
-** content: The content with which to create the node.
+** Parameters:
+**   content: The content with which to create the node.
 **
 ** Returns the new node.
 */

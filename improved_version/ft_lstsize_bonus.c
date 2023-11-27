@@ -13,7 +13,8 @@
 #include "libft.h"
 
 /*
-** lst: The beginning of the list.
+** Parameters:
+**   lst: The beginning of the list.
 **
 ** Returns the length of the list.
 */

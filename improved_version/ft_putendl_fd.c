@@ -13,8 +13,9 @@
 #include "libft.h"
 
 /*
-** s: The string to send.
-** fd: The file descriptor to write to.
+** Parameters:
+**   s: The string to send.
+**   fd: The file descriptor to write to.
 */
 void	ft_putendl_fd(char *s, int fd)
 {

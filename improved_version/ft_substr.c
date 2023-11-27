@@ -13,9 +13,10 @@
 #include "libft.h"
 
 /*
-** s: The string from which to create the substring.
-** start: The index of the character in ’s’ from which to start the substring.
-** len: The maximum length of the substring.
+** Parameters:
+**   s: The string from which to create the substring.
+**   start: The index of the character in ’s’ from which to start the substring.
+**   len: The maximum length of the substring.
 **
 ** Returns the resulting substring, or NULL if memory allocation fails.
 */

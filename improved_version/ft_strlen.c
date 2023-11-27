@@ -17,8 +17,7 @@
 ** compute the length of s, but never scans beyond the first maxlen bytes of s.
 **
 ** The function returns the number of characters that precede the terminating
-** NUL character. The ft_strnlen() function returns either the same result as
-** ft_strlen() or maxlen, whichever is smaller.
+** NUL character.
 */
 size_t	ft_strlen(const char *s)
 {

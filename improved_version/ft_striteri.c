@@ -13,8 +13,9 @@
 #include "libft.h"
 
 /*
-** s: The string to iterate.
-** f: The function to apply on each character.
+** Parameters:
+**   s: The string to iterate.
+**   f: The function to apply on each character.
 */
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {

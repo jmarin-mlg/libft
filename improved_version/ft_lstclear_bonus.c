@@ -13,8 +13,9 @@
 #include "libft.h"
 
 /*
-** lst: The address of a pointer to a node.
-** del: A function pointer used to remove the content of a node.
+** Parameters:
+**   lst: The address of a pointer to a node.
+**   del: A function pointer used to remove the content of a node.
 */
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {

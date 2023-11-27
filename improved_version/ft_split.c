@@ -91,8 +91,9 @@ static void	*free_memory(char **split, int index)
 }
 
 /*
-** s: The string to separate.
-** c: Delimiting character.
+** Parameters:
+**   s: The string to separate.
+**   c: Delimiting character.
 **
 ** Returns the array of new strings resulting from the split or NULL if memory
 ** allocation fails.
