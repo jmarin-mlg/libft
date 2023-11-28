@@ -73,7 +73,7 @@ char	*ft_itoa(int n)
 
 	len = numlen(n);
 	res = (char *) ft_calloc(len + 1, sizeof(char));
-	if (!(res))
+	if (!res)
 		return (NULL);
 	res[len--] = '\0';
 	if (n == 0)
