@@ -6,7 +6,7 @@
 #    By: jmarin-o <jmarin-o@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/18 17:52:26 by jmarin-o          #+#    #+#              #
-#    Updated: 2023/11/15 07:19:02 by jmarin-o         ###   ########.fr        #
+#    Updated: 2024/01/24 18:48:30 by jmarin-o         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,10 +70,10 @@ BONUS_OBJS = ${BONUS_SOURCES:.c=.o}
 all: ${NAME}
 
 ${NAME}: ${OBJS}
-	@ar -rusv $@ $^
+	@ar -rcusv $@ $^
 
 bonus: ${BONUS_OBJS}
-	@ar -rusv ${NAME} $^
+	@ar -rcusv ${NAME} $^
 
 %.o: %.c
 	@cc ${FLAGS} -c -o $@ $^
@@ -112,6 +112,8 @@ rebonus: fclean bonus
 #	files in the archive. If a file with the same name already exists in the
 #	archive, it will be replaced or updated with the new file. If the file
 #	doesn't exist, a new one will be added.
+
+#	-c (create): Create the library if it does not exist.
 
 #	-u (update): The -u flag tells ar to update only those files that have
 #	changed since they were last added to the archive. This means that only
