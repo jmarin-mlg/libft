@@ -6,7 +6,7 @@ Libft es el primer proyecto del `Cursus` en `42 Network`, consiste en
 desarrollar un conjunto de funciones que serán de gran utilidad en el resto de
 proyectos. La mayoría de estas funciones simulan a funciones nativas de **C**.
 
-Este proyecto debe estar escrito siguiendo la [Norma](es.norm.pdf).
+Este proyecto debe estar escrito siguiendo la [Norma](https://github.com/jmarin-mlg/resources_42_malaga/blob/master/pdfs/es.norm.pdf).
 
 > **¡Atención!**
 >
